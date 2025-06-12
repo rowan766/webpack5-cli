@@ -55,10 +55,14 @@ module.exports = {
     }),
     new BundleAnalyzerPlugin(
       {
-        openAnalyzer: false, //阻止自动打开浏览器
+       //  openAnalyzer: false, // 阻止自动打开性能监控端口
+        analyzerMode: 'server', // 或者 'static', 'json', 'disabled'
+        analyzerPort: 8889, // 可以指定端口
       }
     ),
-    new ThemedProgressPlugin(),
+    new ThemedProgressPlugin({
+      theme: 'halloween', // 可能的选项: 'default', 'halloween', 'christmas', 'spring', 'summer', 'custom'
+    }),
  ]
 
 }
