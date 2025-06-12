@@ -1,0 +1,5 @@
+@import "tailwindcss";
+.titleName{
+    color: blueviolet;
+    font-size: 20px;
+}
