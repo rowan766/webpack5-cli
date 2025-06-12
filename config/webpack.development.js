@@ -3,6 +3,7 @@ const { resolve,join } = require('path');
 const FriendlyErrorsWebpackPlugin = require('@soda/friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { ThemedProgressPlugin } = require('themed-progress-plugin')
 const port = 3003;
 module.exports = {
  devServer: {
@@ -52,7 +53,12 @@ module.exports = {
       },
       clearConsole: true,
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin(
+      {
+        openAnalyzer: false, //阻止自动打开浏览器
+      }
+    ),
+    new ThemedProgressPlugin(),
  ]
 
 }

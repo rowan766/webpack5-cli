@@ -66,6 +66,9 @@ importers:
       tailwindcss:
         specifier: ^4.1.10
         version: 4.1.10
+      themed-progress-plugin:
+        specifier: ^1.0.1
+        version: 1.0.1(webpack@5.99.9)
       webpack:
         specifier: ^5.99.9
         version: 5.99.9(@swc/core@1.12.0)(webpack-cli@6.0.1)
@@ -2209,6 +2212,11 @@ packages:
     resolution: {integrity: sha512-UYCvU9YQW2f/Vwl+P0GfhxJxbUGLwd+5QrrGgLajzWAtC/23AX0vcise32kkP7Eu0Wu9VlzzHAXkLObgjQfFlQ==}
     engines: {node: '>=10'}
     hasBin: true
+
+  themed-progress-plugin@1.0.1:
+    resolution: {integrity: sha512-Kum/Inx2wPpFq5/y3cKUiSEOAWflIqPKhFZh4Pws61iU/m+wHEmuDBNJhNZVQPOn0+TW5HQB2sCNBoaiO9V8cA==}
+    peerDependencies:
+      webpack: ^5.0.0
 
   thingies@1.21.0:
     resolution: {integrity: sha512-hsqsJsFMsV+aD4s3CWKk85ep/3I9XzYV/IXaSouJMYIoDlgyi11cBhsqYe9/geRfB0YIikBQg6raRaM+nIMP9g==}
@@ -4487,6 +4495,11 @@ snapshots:
       acorn: 8.15.0
       commander: 2.20.3
       source-map-support: 0.5.21
+
+  themed-progress-plugin@1.0.1(webpack@5.99.9):
+    dependencies:
+      chalk: 4.1.2
+      webpack: 5.99.9(@swc/core@1.12.0)(webpack-cli@6.0.1)
 
   thingies@1.21.0(tslib@2.8.1):
     dependencies:
