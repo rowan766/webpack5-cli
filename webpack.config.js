@@ -7,6 +7,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const _modeflag = _mode === 'production' ? true : false;
 
+const { ThemedProgressPlugin } = require('themed-progress-plugin');
+
 
 const webpackBaseConfig={
     entry:{
@@ -41,6 +43,28 @@ const webpackBaseConfig={
             },
         ],
     },
+    resolve: {
+        alias: {
+        '@': resolve('src/'),
+        '@components': resolve('src/components'),
+        '@hooks': resolve('src/hooks'),
+        '@pages': resolve('src/pages'),
+        '@layouts': resolve('src/layouts'),
+        '@assets': resolve('src/assets'),
+        '@states': resolve('src/states'),
+        '@service': resolve('src/service'),
+        '@utils': resolve('src/utils'),
+        '@lib': resolve('src/lib'),
+        '@constants': resolve('src/constants'),
+        '@connections': resolve('src/connections'),
+        '@abis': resolve('src/abis'),
+        '@types': resolve('src/types'),
+        },
+        extensions: ['.js', '.ts', '.tsx', '.jsx', '.css'],
+        fallback: {
+        // stream: require.resolve('stream-browserify'),
+        },
+    },
     plugins:[
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
@@ -48,6 +72,10 @@ const webpackBaseConfig={
             chunkFilename: _modeflag ? 'styles/[name].[contenthash:5].css' : 'styles/[name].css',
             ignoreOrder: false,
         }),
-    ]
+        new ThemedProgressPlugin({
+            theme: 'halloween', // 可能的选项: 'default', 'halloween', 'christmas', 'spring', 'summer', 'custom'
+        }),
+    ],
+    stats: 'errors-only', // 只显示错误信息
 };
 module.exports = merge.default(webpackBaseConfig, _mergeConfig);

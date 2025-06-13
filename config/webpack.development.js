@@ -3,7 +3,6 @@ const { resolve,join } = require('path');
 const FriendlyErrorsWebpackPlugin = require('@soda/friendly-errors-webpack-plugin');
 const notifier = require('node-notifier');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const { ThemedProgressPlugin } = require('themed-progress-plugin')
 const port = 3003;
 module.exports = {
  devServer: {
@@ -55,14 +54,11 @@ module.exports = {
     }),
     new BundleAnalyzerPlugin(
       {
-       //  openAnalyzer: false, // 阻止自动打开性能监控端口
+        openAnalyzer: false, // 阻止自动打开性能监控端口
         analyzerMode: 'server', // 或者 'static', 'json', 'disabled'
         analyzerPort: 8889, // 可以指定端口
       }
-    ),
-    new ThemedProgressPlugin({
-      theme: 'halloween', // 可能的选项: 'default', 'halloween', 'christmas', 'spring', 'summer', 'custom'
-    }),
+    )
  ]
 
 }
