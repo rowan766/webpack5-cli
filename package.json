@@ -58,8 +58,10 @@
     "yargs-parser": "^21.1.1"
   },
   "dependencies": {
+    "@mastra/client-js": "^0.10.4",
     "@swc/core": "^1.12.0",
     "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.6.2",
     "swc-loader": "^0.2.6",
     "terser-webpack-plugin": "^5.3.14"

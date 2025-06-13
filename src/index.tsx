@@ -4,8 +4,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 
 // 引入页面组件 - 改为相对路径
-import Home from './pages/Home';
-import Abis from './pages/Abis';
+import Home from '@/pages/codeRevi/codeRevi';
+import Abis from '@/pages/Abis';
 
 const Layout = () => {
     const location = useLocation();
